@@ -10,5 +10,8 @@ This is a baby detection project aim to detect whether images contain baby or no
 ## Run the model
 - please refer to `main.py`. 1 means contains baby, 0 means not.
 
+## TODO 
+- get baby face bounding box
+
 ## License
 - The MIT License

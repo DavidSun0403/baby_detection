@@ -31,7 +31,7 @@ model = tf.keras.Sequential([
 ])
 
 # Use a constant learning rate
-initial_learning_rate = 0.001
+initial_learning_rate = 0.002
 
 # Create optimizer with constant learning rate
 optimizer = tf.keras.optimizers.Adam(learning_rate=initial_learning_rate)

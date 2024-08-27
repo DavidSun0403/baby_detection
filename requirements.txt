@@ -1,0 +1,5 @@
+scipy
+tensorflow
+pandas
+numpy
+keras-tuner

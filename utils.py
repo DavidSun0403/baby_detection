@@ -1,5 +1,7 @@
 from PIL import Image
 import tensorflow as tf
+import cv2
+import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 training_data_folder  = "data/baby_detection_data/train/"
@@ -87,3 +89,15 @@ def process_label(input_list):
 
 def process_image_path(input_list, prefix):
     return [prefix + element for element in input_list]
+
+def load_and_preprocess_image(image_path, bbox):
+    image = cv2.imread(image_path)
+    image = cv2.resize(image, (224, 224))  # Resize to match model input size
+    bbox = np.array(bbox) / [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]  # Normalize bbox
+    return image, bbox
+
+def draw_bounding_box(image, bbox):
+    h, w, _ = image.shape
+    x_min, y_min, x_max, y_max = bbox * [w, h, w, h]
+    cv2.rectangle(image, (int(x_min), int(y_min)), (int(x_max), int(y_max)), (255, 0, 0), 2)
+    return image

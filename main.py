@@ -9,8 +9,8 @@ model = tf.keras.models.load_model('result/baby.keras')
 img_path = 'cutest_baby.jpg'
 img = image.load_img(img_path, target_size=(224, 224)) 
 img_array = image.img_to_array(img)
-img_array = img_array / 255.0 
-img_array = np.expand_dims(img_array, axis=0) 
+img_array = img_array / 255.0  # Normalize the image
+img_array = np.expand_dims(img_array, axis=0)  # Add a batch dimension
 
 # Make a prediction
 predictions = model.predict(img_array)
