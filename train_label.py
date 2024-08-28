@@ -60,4 +60,4 @@ history = model.fit(
     callbacks=[early_stopping, reduce_lr]
 )
 
-model.save("result/baby.keras")
+model.save("result/baby_label.keras")

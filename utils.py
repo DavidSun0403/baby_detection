@@ -85,7 +85,7 @@ def create_dataset(tfrecord_file, batch_size=32, shuffle=True, augment=False):
     return dataset
 
 def process_label(input_list):
-    return [1 if element == 'baby' else 0 for element in input_list]
+    return [1 if element == 'Baby' else 0 for element in input_list]
 
 def process_image_path(input_list, prefix):
     return [prefix + element for element in input_list]

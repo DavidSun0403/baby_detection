@@ -3,10 +3,10 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 # Load the model
-model = tf.keras.models.load_model('result/baby.keras')
+model = tf.keras.models.load_model('result/baby_label.keras')
 
 # Load and preprocess the image
-img_path = 'cutest_baby.jpg'
+img_path = 'HJK-7.jpg'
 img = image.load_img(img_path, target_size=(224, 224)) 
 img_array = image.img_to_array(img)
 img_array = img_array / 255.0  # Normalize the image
