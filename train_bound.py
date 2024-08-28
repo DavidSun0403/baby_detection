@@ -95,8 +95,7 @@ model = models.Sequential([
     layers.Dropout(0.5),
     layers.Dense(128, activation='relu'),
     layers.Dropout(0.3),
-    layers.Dense(4),  # Remove sigmoid activation
-    Lambda(lambda x: tf.clip_by_value(x, 0, 1))  # Clip values between 0 and 1
+    layers.Dense(4, activation='sigmoid')  # Sigmoid activation for normalized bbox
 ])
 
 # Compile the model
